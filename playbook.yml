@@ -28,7 +28,7 @@
     ## notes: path_to_requirements, path_to_managepy: unless blank, must have trailing slash
     django_apps: 
       - {
-        "djangoapp_projectname" : "tam", 
+        "djangoapp_projectname" : "wedding", 
         "djangoapp_track_branch": "master", 
         "djangoapp_repo" : "git@github.com:toast38coza/WeddingSite.git", 
         "path_to_requirements" : "", 
