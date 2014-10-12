@@ -1,0 +1,12 @@
+django==1.7
+djangorestframework
+django-rest-swagger
+django-filter
+requests
+gunicorn
+psycopg2
+mailchimp
+
+django-jenkins
+django-extensions
+sphinx
