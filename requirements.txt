@@ -6,6 +6,7 @@ requests
 gunicorn
 psycopg2
 mailchimp
+pillow
 
 django-jenkins
 django-extensions

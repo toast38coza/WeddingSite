@@ -36,9 +36,19 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
+    # project
     'wedding',
+
+    ## main page + 
     'website',
+
+    ## supporting apps
+    'gallery',
+    'logistics',
+    'events',
+    'registry',
 )
 
 MIDDLEWARE_CLASSES = (
