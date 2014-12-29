@@ -54,3 +54,4 @@ docs/_build/
 target/
 
 *.DS_STORE
+db.sqlite3
