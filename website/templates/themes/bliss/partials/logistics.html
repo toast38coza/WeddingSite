@@ -1,0 +1,151 @@
+<section id="weddinglocation">
+
+    <!-- "THE WEDDING LOCATION" HEADER -->
+    <div id="weddinglocationphoto" class="parallax-hook parallax-weddinglocation parallax-background">
+        
+        <div class="section-overlay">
+            <div class="container">
+                <div class="row">
+                    <header class="col-md-6 col-md-offset-3">
+                        {{section.headline}}
+                        <span>{{section.tagline}}</span>
+                    </header>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.section-overlay -->
+        
+    </div><!-- /#weddinglocationphoto -->
+
+    <!-- "THE WEDDING LOCATION" ACTUAL CONTENT -->
+    {# todo: make this a template tag #}
+    {% if ceremony_venue %}
+    {% with ceremony_venue as venue %}
+    {% include 'themes/bliss/partials/venue.html' %}
+    {% endwith %}
+    {% endif %}
+    <div class = 'clearfix' ></div>
+    {% if reception_venue %}
+    {% with reception_venue as venue %}
+    {% include 'themes/bliss/partials/venue.html' %}
+    {% endwith %}
+    {% endif %}
+
+    <!-- THE AVAILABLE HOTELS -->
+    <div class="hotels">
+        <div class="container">
+
+            <div class="row">
+
+                <!-- HOTELS SMALL CONTENT -->
+                <div class="col-md-3 col-sm-3">
+                    <h3 class="sectionmaintitle">Hotels Nearby</h3>
+                    <p>We really want our out of town guests to be confortable so we put together a small lists of the best price/quality hotels in the area</p>
+                </div><!-- /.col-md-3-->
+
+                <!-- HOTEL 1 -->
+                <div class="col-md-3 col-sm-3">
+                    <div class="round-frame-bg">
+                        <div class="round-frame">
+                            <img src="{{STATIC_URL}}img/hotel1.jpg" alt="hotel 1">
+                        </div><!-- /.round-frame -->
+                    </div><!-- /.round-frame-bg -->
+                    <div class="alignright">
+                        <h5>Ibis Hotel</h5>
+                        <p>4567 Street name, 012 </p>
+                        <p>City name, Country</p>
+                        <a href="#" class="readmore">Website</a>
+                    </div><!-- /.alignright -->
+                </div><!-- /.col-md-3-->
+
+                <!-- HOTEL 2 -->
+                <div class="col-md-3 col-sm-3">
+                    <div class="round-frame-bg">
+                        <div class="round-frame">
+                            <img src="{{STATIC_URL}}img/hotel2.jpg" alt="hotel 2">
+                        </div><!-- /.round-frame -->
+                    </div><!-- /.round-frame-bg -->
+                    <div class="alignright">
+                        <h5>Ibis Hotel</h5>
+                        <p>4567 Street name, 012 </p>
+                        <p>City name, Country</p>
+                        <a href="#" class="readmore">Website</a>
+                    </div><!-- /.alignright -->
+                </div><!-- /.col-md-3-->
+
+                <!-- HOTEL 3 -->
+                <div class="col-md-3 col-sm-3">
+                    <div class="round-frame-bg">
+                        <div class="round-frame">
+                            <img src="{{STATIC_URL}}img/hotel3.jpg" alt="hotel 3">
+                        </div><!-- /.round-frame -->
+                    </div><!-- /.round-frame-bg -->
+                    <div class="alignright">
+                        <h5>Ibis Hotel</h5>
+                        <p>4567 Street name, 012 </p>
+                        <p>City name, Country</p>
+                        <a href="#" class="readmore">Website</a>
+                    </div><!-- /.alignright -->
+                </div><!-- /.col-md-3-->
+            </div><!-- /.row -->
+        </div><!-- /.container-->
+    </div><!-- /.hotels -->
+
+
+    <!-- THE LOCAL ATTRACTIONS -->
+     <div class="container attractions">
+         <div class="row">
+
+            <!-- ATTRACTIONS SMALL CONTENT -->
+            <div class="col-md-3 col-sm-3">
+                <h3 class="sectionmaintitle">Local Attractions</h3>
+                <p>While in the area maybe you would like to benefit from everything our town has to offer. Here are our favourite attractions</p>
+            </div><!-- /.col-md-3-->
+
+
+            <!-- ATTRACTION 1 -->
+            <div class="col-md-3 col-sm-3">
+                <div class="round-frame-bg">
+                    <div class="round-frame">
+                        <img src="{{STATIC_URL}}img/attraction1.jpg" alt="attraction 1">
+                    </div><!-- /.round-frame -->
+                </div><!-- /.round-frame-bg -->
+                <div class="alignright">
+                    <h5>Science Museum</h5>
+                    <p>4567 Street name, 012 </p>
+                    <p>City name, Country</p>
+                    <a href="#" class="readmore">Website</a>
+                </div><!-- /.alignright -->
+            </div><!-- /.col-md-3-->
+
+            <!-- ATTRACTION 2 -->
+            <div class="col-md-3 col-sm-3">
+                <div class="round-frame-bg">
+                    <div class="round-frame">
+                        <img src="{{STATIC_URL}}img/attraction2.jpg" alt="attraction 2">
+                    </div><!-- /.round-frame -->
+                </div><!-- /.round-frame-bg -->
+                <div class="alignright">
+                    <h5>Disneyland</h5>
+                    <p>4567 Street name, 012 </p>
+                    <p>City name, Country</p>
+                    <a href="#" class="readmore">Website</a>
+                </div><!-- /.alignright -->
+            </div><!-- /.col-md-3-->
+
+            <!-- ATTRACTION 3 -->
+            <div class="col-md-3 col-sm-3">
+                <div class="round-frame-bg">
+                    <div class="round-frame">
+                        <img src="{{STATIC_URL}}img/attraction3.jpg" alt="attraction 3">
+                    </div><!-- /.round-frame -->
+                </div><!-- /.round-frame-bg -->
+                <div class="alignright">
+                    <h5>Central Park</h5>
+                    <p>4567 Street name, 012 </p>
+                    <p>City name, Country</p>
+                    <a href="#" class="readmore">Website</a>
+                </div><!-- /.alignright -->
+            </div><!-- /.col-md-3-->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- weddinglocation -->

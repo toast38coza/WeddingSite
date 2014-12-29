@@ -1628,6 +1628,22 @@ h6 {
 		text-align: center;
 		padding-top: 3em
 	}
+
+/* FAQ section */
+
+	/* the header */
+	#faqphoto {
+		background:url(../img/parallax/registry.jpg);
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 300px;
+		height: 300px; 
+		margin: 0 auto; 
+		width: 100%; 
+		max-width: 1920px; 
+		margin-bottom: 50px;
+	}
 	
 
 /* "GUEST BOOK" section

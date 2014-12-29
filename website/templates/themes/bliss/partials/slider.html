@@ -5,6 +5,7 @@
 ============================================================================================================== -->
 
 
+
 <div class="jumbotron" id="thetop">
 
     <section class="slider">
@@ -13,10 +14,12 @@
 
             <!-- THE ACTUAL PHOTO SLIDES -->
             <ul class="slides">
+                <li><img src="{{STATIC_URL}}img/slider/photo3.jpg" alt="photo 3" /></li>
                 <li><img src="{{STATIC_URL}}img/slider/photo1.jpg" alt="photo 1" /></li>
                 <li><img src="{{STATIC_URL}}img/slider/photo2.jpg" alt="photo 2" /></li>
-                <li><img src="{{STATIC_URL}}img/slider/photo3.jpg" alt="photo 3" /></li>
+                {% comment %}
                 <li><img src="{{STATIC_URL}}img/slider/photo4.jpg" alt="photo 4" /></li>
+                {% endcomment %}
             </ul><!-- /.slides -->
 
         </div><!-- /.flexslider -->
@@ -24,7 +27,7 @@
         <!-- THE NAMES OF THE BRIDE AND GROOM -->
         <div class="names hide">
             <div class="container">
-                Tammy <span><i>&#38;</i></span> Michael
+                {{wedding.partner_one}} <span><i>&#38;</i></span> {{wedding.partner_two}}
             </div><!-- /.container -->
         </div><!-- /.names -->
 

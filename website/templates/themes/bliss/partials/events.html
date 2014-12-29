@@ -1,0 +1,190 @@
+<!-- =========================================================================================================
+==============================================================================================================
+                                    "EVENTS CALENDAR / RSVP" section
+==============================================================================================================
+============================================================================================================== -->
+
+<section id="rsvp">
+
+<!-- "RSVP" SECTION MAIN TITLE -->
+<div id="rsvpphoto" class="parallax-hook parallax-rsvp parallax-background">
+    <div class="section-overlay">
+        <div class="container">
+            <div class="row">
+                <header class="col-md-6 col-md-offset-3">
+                    Events Calendar &#38; RSVP
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+                </header>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.section-overlay -->
+    
+</div><!-- /#rsvpphoto -->
+
+<!-- "RSVP" SECTION actual content -->
+<div class="container">
+    
+    <!-- "RSVP" INTERMEDIARY TITLE AND CONTENT -->
+    <h3 class="text-center">Here Are The Most Important Events. Please RSVP Below!</h3>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    
+    <!-- "RSVP" EVENTS -->
+    <div class="row calendar">
+        <h4 class="text-center">Please click on the events where you want to participate.</h4>
+        <div class="col-md-4">
+
+            <!-- THE MONTH -->
+            <h4 class="sectionmaintitle">May, 2014</h4>
+
+            <div class="border">
+
+                <div class="row">
+
+                    <!-- RSVP EVENT -->
+                    <div class="col-md-4">
+                        <div class="date">
+                            5<span>th</span>
+                        </div><!-- /.date-->
+                        <h5 class="bachelorsParty">Bachelors Party</h5>
+                    </div><!-- /.col-md-4 -->
+
+                    <!-- RSVP EVENT -->
+                    <div class="col-md-4">
+                        <div class="date">
+                            23<span>rd</span>
+                        </div><!-- /.date-->
+                        <h5 class="theGirlsParty">The Girls Party</h5>
+                    </div><!-- /.col-md-4 -->
+
+                    <!-- RSVP EVENT -->
+                    <div class="col-md-4">
+                        <div class="date">
+                            31<span>st</span>
+                        </div><!-- /.date-->
+                        <h5 class="dinnerRehearsal">Dinner Rehearsal</h5>
+                    </div><!-- /.col-md-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.border -->
+        </div><!-- /.col-md-4 -->
+
+        <!-- THE MONTH -->
+        <div class="col-md-4">
+            <h4 class="sectionmaintitle">June, 2014</h4>
+            <div class="border">
+                <div class="row">
+
+                    <!-- RSVP EVENT -->
+                    <div class="col-md-6">
+                        <div class="date">
+                            8<span>th</span>
+                        </div><!-- /.date-->
+                        <h5 class="weddingRehearsal">Wedding Rehearsal</h5>
+                    </div><!-- /.col-md-6 -->
+
+                    <!-- RSVP EVENT -->
+                    <div class="col-md-6">
+                        <div class="date">
+                            22<span>nd</span>
+                        </div><!-- /.date-->
+                        <h5 class="familyDinner">Dinner In The Family</h5>
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.border -->
+        </div><!-- /.col-md-4 -->
+
+        <!-- THE MONTH -->
+        <div class="col-md-4">
+            <h4 class="sectionmaintitle">July, 2014</h4>
+            <div class="border">
+                <div class="row">
+
+                    <!-- RSVP EVENT -->
+                    <div class="col-md-12">
+                        <div class="date">
+                            25<span>th</span>
+                        </div><!-- /.date-->
+                        <h5 class="theWedding">The Weding</h5>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.border --><!-- /.row -->
+        </div><!-- /.col-md-4 -->
+    </div><!-- /.row -->
+
+    <!-- THE RSVP FORM -->
+    <div class="row">
+        <div class="col-md-4">
+            <h4 class="sectionmaintitle">Please Use The RSVP Form</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div class="col-md-8">
+
+            <!-- the actual form begins -->
+            <form role="form" action="send_rsvp.php" method="post" id="rsvpform">
+
+                <!-- EVENTS ATTENDING -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Events Attending <span>(please click on the events above):</span></h5>
+                    </div>
+                    <div class="col-md-6" id="thecheckboxes"></div>
+                </div><!--/.row-->
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <!-- NAME -->
+                        <div class="form-group">
+                            <label for="rsvp-name" class="sr-only">Name</label>
+                            <input type="text" name="rsvp-name" placeholder="Your Name" id="rsvp-name" class="form-control">
+                        </div><!-- /.form-group -->
+
+                        <!-- EMAIL -->
+                        <div class="form-group">
+                            <label for="rsvp-email" class="sr-only">Email address</label>
+                            <input type="email" name="rsvp-email" placeholder="Your Email" id="rsvp-email" class="form-control">
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-6 -->
+
+                    <div class="col-md-6">
+
+                        <!-- EXTRA REQUIREMENTS -->
+                        <div class="form-group">
+                            <label for="rsvp-extra" class="sr-only">Extra Requirements</label>
+                            <textarea id="rsvp-extra" name="rsvp-extra" placeholder="Extra Requirements (gluten free, vegetarian etc)" rows="3" class="form-control"></textarea>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-6 -->
+
+
+                </div><!--/.row-->
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!-- MESSAGE -->
+                        <div class="form-group">
+                            <label for="rsvp-message" class="sr-only">Your Message</label>
+                            <textarea id="rsvp-message" name="rsvp-message" placeholder="Please Enter Your Message" rows="3" class="form-control"></textarea>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-md-12-->
+                </div><!--/.row-->
+
+                <div class="row" id='cf_submit_p'>
+
+                    <!-- SUBMIT BUTTOM -->
+                    <input type="submit" value="Send Message" class="btn btn-primary btn-lg alignright" id="send_message">
+                    
+                </div><!--/.row-->
+
+                <!-- ERROR/SUCCESS -->
+                <div id='mail_success' class='alert alert-success'>Thank you. Your RSVP has been sent.</div><!-- /. SUCCESS MESSAGE -->
+                <div id='mail_fail' class='alert alert-danger'> Sorry, don't know what happened. Try later.</div><!-- /. ERROR MESSAGE -->
+            </form>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+</section><!-- rsvp -->

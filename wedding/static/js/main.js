@@ -196,6 +196,7 @@ $(window).load(function(){
         $('#registryphoto').parallax("50%", 0.1);
         $('#guestbookphoto').parallax("50%", 0.1);
         $('#rsvpphoto').parallax("50%", 0.1);
+        $('#faqphoto').parallax("50%", 0.1);
         $('.parallax-elements').parallax("50%", 0.4);
     
 
@@ -302,6 +303,7 @@ $(window).load(function(){
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
             }, { offset: '10%' });
 
+            
 
         //WAYPOINTS to the sections different PARTS
 

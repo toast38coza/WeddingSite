@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    # thirdparty:
+    'rest_framework',
+
     # project
     'wedding',
 
@@ -49,6 +52,8 @@ INSTALLED_APPS = (
     'logistics',
     'events',
     'registry',
+    'faq',
+    'guests'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -89,9 +94,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/srv/www/wedding/static/'
+
+WEDDING_SECTIONS = [("Welcome", True), ("Gallery", False), ("Logistics", True), 
+                    ("Events", True), ("Registry", True), ("FAQ", True)]
