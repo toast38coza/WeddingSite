@@ -1,3 +1,5 @@
 from django.contrib import admin
+from logistics.models import Accommodation, Attraction
 
-# Register your models here.
+admin.site.register(Accommodation)
+admin.site.register(Attraction)
