@@ -25,7 +25,10 @@ class WeddingHomePageViewTests(TestCase):
 		response = c.get(url)
 
 		assert response.status_code == 200, "Expect 200 OK" 
-		expected_context_variables = ["wedding", "sections", "left_sections", "right_sections"]
+		expected_context_variables = ["wedding", "sections", "left_sections", 
+									  "right_sections", "accommodations", "faqs",
+									  "attractions"]
+
 		for var in expected_context_variables:
 			
 			assert var in response.context,\
@@ -42,9 +45,10 @@ class WeddingModelTests(TestCase):
 		self.site = Site.objects.create()
 		self.wedding = wedding = Wedding.objects.create(site=self.site, intro="hello", partner_one="A", partner_two="B")
 
+	
 	def test_create_wedding_creates_default_sections(self):
 
-		assert len(self.wedding.section_set.all()) == 5		
+		assert len(self.wedding.section_set.all()) > 0		
 
 	def test_get_enabled_sections(self):
 

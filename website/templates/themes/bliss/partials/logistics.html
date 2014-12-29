@@ -1,3 +1,4 @@
+<div id="logistics"></div>
 <section id="weddinglocation">
 
     <!-- "THE WEDDING LOCATION" HEADER -->
@@ -17,19 +18,22 @@
     </div><!-- /#weddinglocationphoto -->
 
     <!-- "THE WEDDING LOCATION" ACTUAL CONTENT -->
-    {# todo: make this a template tag #}
-    {% if ceremony_venue %}
-    {% with ceremony_venue as venue %}
-    {% include 'themes/bliss/partials/venue.html' %}
-    {% endwith %}
-    {% endif %}
-    <div class = 'clearfix' ></div>
-    {% if reception_venue %}
-    {% with reception_venue as venue %}
-    {% include 'themes/bliss/partials/venue.html' %}
-    {% endwith %}
-    {% endif %}
+    <div class="container" >
+        {# todo: make this a template tag #}
+        {% if ceremony_venue %}
+        {% with ceremony_venue as venue %}
+        {% include 'themes/bliss/partials/venue.html' %}
+        {% endwith %}
+        {% endif %}
 
+        {% if reception_venue %}
+        {% with reception_venue as venue %}
+        {% include 'themes/bliss/partials/venue.html' %}
+        {% endwith %}
+        {% endif %}
+    </div>
+
+    {% if accommodations %}
     <!-- THE AVAILABLE HOTELS -->
     <div class="hotels">
         <div class="container">
@@ -38,114 +42,61 @@
 
                 <!-- HOTELS SMALL CONTENT -->
                 <div class="col-md-3 col-sm-3">
-                    <h3 class="sectionmaintitle">Hotels Nearby</h3>
-                    <p>We really want our out of town guests to be confortable so we put together a small lists of the best price/quality hotels in the area</p>
+                    <h3 class="sectionmaintitle">Recommended Accomodation</h3>
+                    <p>There's plenty of good places to stay in the area. Here are some places that we recommend.</p>
                 </div><!-- /.col-md-3-->
 
-                <!-- HOTEL 1 -->
+                <!-- ACCOMM -->
+                {% for accommodation in accommodations %}
                 <div class="col-md-3 col-sm-3">
                     <div class="round-frame-bg">
                         <div class="round-frame">
-                            <img src="{{STATIC_URL}}img/hotel1.jpg" alt="hotel 1">
+                            <img src="{{STATIC_URL}}img/hotel1.jpg" alt="{{accommodation.title}}">
                         </div><!-- /.round-frame -->
                     </div><!-- /.round-frame-bg -->
                     <div class="alignright">
-                        <h5>Ibis Hotel</h5>
-                        <p>4567 Street name, 012 </p>
-                        <p>City name, Country</p>
-                        <a href="#" class="readmore">Website</a>
+                        <h5>{{accommodation.title}}</h5>
+                        <p>{{accommodation.address}}</p>
+                        <a href="{{accommodation.website}}" class="readmore">Website</a>
                     </div><!-- /.alignright -->
                 </div><!-- /.col-md-3-->
+                {% endfor %}
 
-                <!-- HOTEL 2 -->
-                <div class="col-md-3 col-sm-3">
-                    <div class="round-frame-bg">
-                        <div class="round-frame">
-                            <img src="{{STATIC_URL}}img/hotel2.jpg" alt="hotel 2">
-                        </div><!-- /.round-frame -->
-                    </div><!-- /.round-frame-bg -->
-                    <div class="alignright">
-                        <h5>Ibis Hotel</h5>
-                        <p>4567 Street name, 012 </p>
-                        <p>City name, Country</p>
-                        <a href="#" class="readmore">Website</a>
-                    </div><!-- /.alignright -->
-                </div><!-- /.col-md-3-->
-
-                <!-- HOTEL 3 -->
-                <div class="col-md-3 col-sm-3">
-                    <div class="round-frame-bg">
-                        <div class="round-frame">
-                            <img src="{{STATIC_URL}}img/hotel3.jpg" alt="hotel 3">
-                        </div><!-- /.round-frame -->
-                    </div><!-- /.round-frame-bg -->
-                    <div class="alignright">
-                        <h5>Ibis Hotel</h5>
-                        <p>4567 Street name, 012 </p>
-                        <p>City name, Country</p>
-                        <a href="#" class="readmore">Website</a>
-                    </div><!-- /.alignright -->
-                </div><!-- /.col-md-3-->
             </div><!-- /.row -->
         </div><!-- /.container-->
     </div><!-- /.hotels -->
+    {% endif %}
 
 
+    {% if attractions %}
     <!-- THE LOCAL ATTRACTIONS -->
      <div class="container attractions">
          <div class="row">
 
             <!-- ATTRACTIONS SMALL CONTENT -->
             <div class="col-md-3 col-sm-3">
-                <h3 class="sectionmaintitle">Local Attractions</h3>
-                <p>While in the area maybe you would like to benefit from everything our town has to offer. Here are our favourite attractions</p>
+                <h3 class="sectionmaintitle">Things to do</h3>
+                <p>Here's some things you might want to check out while you're in the area</p>
             </div><!-- /.col-md-3-->
 
 
-            <!-- ATTRACTION 1 -->
+            {% for attraction in attractions %}
+            <!-- ATTRACTION -->
             <div class="col-md-3 col-sm-3">
                 <div class="round-frame-bg">
                     <div class="round-frame">
-                        <img src="{{STATIC_URL}}img/attraction1.jpg" alt="attraction 1">
+                        <img src="{{STATIC_URL}}img/attraction1.jpg" alt="{{attraction.title}}">
                     </div><!-- /.round-frame -->
                 </div><!-- /.round-frame-bg -->
                 <div class="alignright">
-                    <h5>Science Museum</h5>
-                    <p>4567 Street name, 012 </p>
-                    <p>City name, Country</p>
-                    <a href="#" class="readmore">Website</a>
+                    <h5>{{attraction.title}}</h5>
+                    <p>{{attraction.address}}
+                    <a href="{{attraction.website}}" class="readmore">Website</a>
                 </div><!-- /.alignright -->
             </div><!-- /.col-md-3-->
+            {% endfor %}
 
-            <!-- ATTRACTION 2 -->
-            <div class="col-md-3 col-sm-3">
-                <div class="round-frame-bg">
-                    <div class="round-frame">
-                        <img src="{{STATIC_URL}}img/attraction2.jpg" alt="attraction 2">
-                    </div><!-- /.round-frame -->
-                </div><!-- /.round-frame-bg -->
-                <div class="alignright">
-                    <h5>Disneyland</h5>
-                    <p>4567 Street name, 012 </p>
-                    <p>City name, Country</p>
-                    <a href="#" class="readmore">Website</a>
-                </div><!-- /.alignright -->
-            </div><!-- /.col-md-3-->
-
-            <!-- ATTRACTION 3 -->
-            <div class="col-md-3 col-sm-3">
-                <div class="round-frame-bg">
-                    <div class="round-frame">
-                        <img src="{{STATIC_URL}}img/attraction3.jpg" alt="attraction 3">
-                    </div><!-- /.round-frame -->
-                </div><!-- /.round-frame-bg -->
-                <div class="alignright">
-                    <h5>Central Park</h5>
-                    <p>4567 Street name, 012 </p>
-                    <p>City name, Country</p>
-                    <a href="#" class="readmore">Website</a>
-                </div><!-- /.alignright -->
-            </div><!-- /.col-md-3-->
         </div><!-- /.row -->
+        {% endif %}
     </div><!-- /.container -->
 </section><!-- weddinglocation -->

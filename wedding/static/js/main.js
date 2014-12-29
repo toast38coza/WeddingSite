@@ -251,59 +251,64 @@ $(window).load(function(){
             // waypoint to the 'our story' section
             $('#ourstory').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'the bride's side' section
             $('#thebrideside').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');        
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'the groom's side' section
             $('#thegroomside').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'the wedding location' section
             $('#weddinglocation').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'blog version 1' section
             $('#blog1').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'blog version 2' section
             $('#blog2').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'gallery version 1' section
             $('#gallery1').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'gallery version 2' section
             $('#gallery2').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'registry' section
             $('#registry').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
 
             // waypoint to the 'guestbook' section
             $('#guestbook').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '0%' });
+
+
+            $('#faq').waypoint(function() {
+                $(this).find('header').removeClass('hide').addClass('animated fadeIn');
+            }, { offset: '1%' });
 
             // waypoint to the 'rsvp' section
             $('#rsvp').waypoint(function() {
                 $(this).find('header').removeClass('hide').addClass('animated fadeIn');
-            }, { offset: '10%' });
+            }, { offset: '1%' });
 
-            
+
 
         //WAYPOINTS to the sections different PARTS
 
@@ -376,7 +381,11 @@ $(window).load(function(){
                 $('.registry .container').removeClass('hide');
                 $('.registry').addClass('animated fadeInRight');
 
-            }, { offset: -450 });
+                $('.donation').removeClass('fakeheight');
+                $('.donation .container').removeClass('hide');
+                $('.donation').addClass('animated fadeInLeft');
+
+            }, { offset: -30 });
 
             // waypoint for "the ceremony location" section
             $('#registry .intermediary-waypoint').waypoint(function() {

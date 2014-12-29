@@ -1,40 +1,40 @@
-<div class="container location">
-    <div class="row">
-        <div class="col-md-6 thelocation">
+    <div class="col-md-6" >
+        <div class="row" >
+            <div class="thelocation col-md-12">
 
-            <!-- INTERMEDIARY TITLE -->
-            <h3 class="sectionmaintitle">{{venue.title}}</h3>
-            
-            <!-- INTERMEDIARY CONTENT -->
-            {% if venue.extra_info %}
-            <p>{{venue.extra_info}}</p>
-            {% endif %}
+                <!-- INTERMEDIARY TITLE -->
+                <h3 class="sectionmaintitle">{{venue.title}}</h3>
+                
+                <!-- INTERMEDIARY CONTENT -->
+                {% if venue.extra_info %}
+                <p>{{venue.extra_info}}</p>
+                {% endif %}
 
-            <!-- ADDRESS AND CEREMONY TIME -->
-            <ul class="locationdetails">
-                <li>
-                    <span class="glyphicon glyphicon-map-marker"></span>
-                    <div class="alignleft">
-                        {{venue.address}}
-                    </div>
-                </li>
-                <li>
-                    <span class="glyphicon glyphicon-time"></span>
-                    <div class="alignleft">
-                        <h5>{{venue.start_datetime|date:"d M, Y"}}</h5>
-                        <p>{{venue.start_datetime|date:"H:i"}}</p>
-                        
-                    </div>
-                </li>
-            </ul><!-- /.locationdetails -->
-        </div><!-- /.col-md-6-->
+                <!-- ADDRESS AND CEREMONY TIME -->
+                <ul class="locationdetails">
+                    <li>
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                        <div class="alignleft">
+                            {{venue.address}}
+                        </div>
+                    </li>
+                    <li>
+                        <span class="glyphicon glyphicon-time"></span>
+                        <div class="alignleft">
+                            <h5>{{venue.start_datetime|date:"d M, Y"}}</h5>
+                            <p>{{venue.start_datetime|date:"H:i"}}</p>
+                            
+                        </div>
+                    </li>
+                </ul><!-- /.locationdetails -->
+            </div><!-- /.col-md-6-->
+        </div>
 
+        <div class="row">
+            <!-- THE MAP -->
+            <div class="col-md-12 alignright">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3681.832658994778!2d14.566983999999998!3d-22.660027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdfacfd4ab06d9901!2sSwakopmund+Airport!5e0!3m2!1sen!2sza!4v1414922808786" width="600" height="450" frameborder="0" style="border:0" style="width:100%;" height="300" frameborder="0" style="border:0"></iframe>
 
-
-        <!-- THE MAP -->
-        <div class="col-md-6 alignright">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3681.832658994778!2d14.566983999999998!3d-22.660027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdfacfd4ab06d9901!2sSwakopmund+Airport!5e0!3m2!1sen!2sza!4v1414922808786" width="600" height="450" frameborder="0" style="border:0" style="width:100%;" height="300" frameborder="0" style="border:0"></iframe>
-
-        </div><!-- /.col-md-6-->
-    </div><!-- /.row -->
-</div><!-- /.container -->
+            </div><!-- /.col-md-6-->
+        </div>
+    </div>

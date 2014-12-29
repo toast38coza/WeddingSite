@@ -12,7 +12,7 @@ class Accommodation(models.Model):
     address = models.CharField(max_length=100)
     #extra_info = models.TextField(blank=True)
     website = models.URLField(blank=True)
-    picture = models.ImageField()
+    picture = models.ImageField(blank=True)
 
 
 class Attraction(models.Model):
