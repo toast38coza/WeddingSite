@@ -32,9 +32,21 @@
 
         <div class="row">
             <!-- THE MAP -->
-            <div class="col-md-12 alignright">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3681.832658994778!2d14.566983999999998!3d-22.660027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xdfacfd4ab06d9901!2sSwakopmund+Airport!5e0!3m2!1sen!2sza!4v1414922808786" width="600" height="450" frameborder="0" style="border:0" style="width:100%;" height="300" frameborder="0" style="border:0"></iframe>
-
-            </div><!-- /.col-md-6-->
+            <div id="{{venue.title|slugify}}-map" ></div><!-- /.col-md-6-->
         </div>
     </div>
+
+    </script>
+    <script type="text/javascript">
+      function initialize_{{venue.title|slugify|replace:"-,_"}}() {
+        var mapOptions = {
+          center: { lat: {{venue.latitude}}, lng: {{venue.longitude}} },
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('{{venue.title|slugify}}-map'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize_{{venue.title|slugify}}-map);
+    </script>
+
+
