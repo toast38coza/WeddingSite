@@ -32,21 +32,35 @@
 
         <div class="row">
             <!-- THE MAP -->
-            <div id="{{venue.title|slugify}}-map" ></div><!-- /.col-md-6-->
+            <div class="col-md-12">
+                <div id="{{venue.title|slugify}}-map" style="height: 300px; margin: 0; padding: 0; border: solid 2px #ccc" ></div>
+                <div class="clearfix" ></div>
+                <small>
+                    <a href="http://www.google.com/maps/place/{{venue.latitude}},{{venue.longitude}}"  target="_blank" title="Open in Google Maps" >
+                        Open in Google Maps</a></small>
+            </div>
         </div>
     </div>
 
     </script>
     <script type="text/javascript">
-      function initialize_{{venue.title|slugify|replace:"-,_"}}() {
+      function initialize_{{venue.title|slugify|cut:"-"}}() {
+
+        var myLatlng = new google.maps.LatLng( {{venue.latitude}}, {{venue.longitude}} );
         var mapOptions = {
-          center: { lat: {{venue.latitude}}, lng: {{venue.longitude}} },
+          center: myLatlng,
           zoom: 8
         };
         var map = new google.maps.Map(document.getElementById('{{venue.title|slugify}}-map'),
             mapOptions);
+        // To add the marker to the map, use the 'map' property
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title:"{{venue.title}}"
+        });
       }
-      google.maps.event.addDomListener(window, 'load', initialize_{{venue.title|slugify}}-map);
+      google.maps.event.addDomListener(window, 'load', initialize_{{venue.title|slugify|cut:"-"}});
     </script>
 
 
