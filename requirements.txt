@@ -8,6 +8,7 @@ psycopg2
 mailchimp
 pillow
 django-autoslug
+django-taggit
 
 django-jenkins
 django-extensions
