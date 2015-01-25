@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 
     # thirdparty:
     'rest_framework',
+    'taggit',
 
     # project
     'wedding',

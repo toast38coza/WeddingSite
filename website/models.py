@@ -48,7 +48,7 @@ class WeddingCeremonyVenue(models.Model):
     def __unicode__(self):
         return self.title 
 
-    wedding = models.ForeignKey('Wedding') ## OneToOne? 
+    wedding = models.ForeignKey('Wedding') 
     title = models.CharField(max_length=100, help_text="The name of the venue")
     extra_info = models.TextField(blank=True, help_text="Some extra info about it. Maybe what it looks like, or something cool about the place")
     start_datetime = models.DateTimeField(help_text="When does the ceremony start?")

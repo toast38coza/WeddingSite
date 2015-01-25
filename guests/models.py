@@ -9,7 +9,7 @@ class Guest(models.Model):
         return self.title 
 
     wedding = models.ForeignKey('website.Wedding')
-    user = models.OneToOneKey(User)
+    user = models.OneToOneField(User)
     partner = models.ForeignKey('Guest')
 
     # a unique code the guest can use to login
@@ -26,9 +26,16 @@ class Guest(models.Model):
     
 class GuestRSVP(models.Model):
 
-	guest = models.ForeignKey('Guest')
-	event = models.ForeignKey('events.Event')
+    class Meta:
+        unique_together = ("guest", "event")
 
-	rsvp = models.BooleanField(default=False)
 
+    guest = models.ForeignKey('Guest')
+    event = models.ForeignKey('events.Event')
+
+    rsvp = models.BooleanField(default=False)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
 
