@@ -2,7 +2,10 @@
   
   tasks:
     - name: update apt cache 
-      apt: update_cache=yes cache_valid_time=3600      
+      apt: update_cache=yes cache_valid_time=3600  
+
+    - name: Create required directories
+      file: path='/srv/www/wedding/media/' state=directory    
 
   roles:
     - Ansibles.build-essential
