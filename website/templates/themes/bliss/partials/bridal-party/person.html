@@ -2,7 +2,7 @@
     <div class="round-frame-bg">
         {% if person.picture %}
         <div class="round-frame">
-            <img src="{{STATIC_URL}}{{person.picture.url}}" 
+            <img src="{{person.picture.url}}" 
                  alt="{{person.full_name}} - {{person.role}}">
         </div><!-- /.round-frame -->
         {% endif %}
