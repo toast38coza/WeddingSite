@@ -106,6 +106,9 @@ SIDES = [('His','His'), ('Hers','Hers')]
 
 class BridalPartyMember(models.Model):
 
+    def __unicode__(self):
+        return self.full_name
+
     role = models.CharField(max_length=100, choices=BRIDAL_PARTY_OPTIONS)
     side = models.CharField(max_length=100, choices=SIDES)
     role_detail = models.CharField(max_length=100, help_text="For example, 'Mother', 'Father', 'Maid of Honor' or 'Best Man'", blank=True, null=True)
