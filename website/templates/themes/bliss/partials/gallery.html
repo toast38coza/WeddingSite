@@ -21,7 +21,7 @@
         <!-- MEGAFOLIO FILTER LIST -->
         <ul class="filter-list">
             {% for gallery in galleries %}
-            <li class="filter" data-category="{{gallery.slug}}">{{gallery.title}}</li>
+            <li class="filter" data-category="cat-{{gallery.slug}}">{{gallery.title}}</li>
             {% endfor %}            
         </ul><!-- /.filter-list -->
         <div class="clearfix"></div>
@@ -32,7 +32,7 @@
                 
                 <!-- GALLERY PHOTO -->
                 {% for photo in gallery.picture_set.all %}
-                <div class="mega-entry cat-all cat-six" id="g1-entry-1" data-src="{{STATIC_URL}}img/gallery/1.jpg" data-width="600" data-height="450">
+                <div class="mega-entry cat-all cat-{{gallery.slug}}" id="g1-entry-1" data-src="{{STATIC_URL}}img/gallery/1.jpg" data-width="600" data-height="450">
                     
                     <!-- THE CONTAINER FOR THE HOVER EFFECT -->
                     <div class="mega-hover">
