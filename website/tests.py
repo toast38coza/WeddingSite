@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-from website.models import Wedding, Section, WeddingCeremonyVenue, WeddingReceptionVenue
+from website.models import Wedding, Section, WeddingCeremonyVenue, WeddingReceptionVenue, BridalPartyMember
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
 from mock import patch
@@ -18,8 +18,37 @@ class WeddingHomePageViewTests(TestCase):
 	def test_page_selects_the_correct_wedding(self):
 		pass
 
+	def test_get_bridal_parties_gets_her_side(self):
+
+		num_bridesmaids = 2
+		num_groomsmen = 0
+
+		MockDataHelper.create_bridal_parties(num_bridesmaids, num_groomsmen)
+
+		from website.views import _get_bridal_parties
+		her_side, his_side = _get_bridal_parties()
+
+		assert her_side.get("mom").full_name == 'Mrs. Arendse'
+		assert her_side.get("dad").full_name == 'Mr. Arendse'
+		assert len(her_side.get("bridesmaids")) == num_bridesmaids
+
+	def test_get_bridal_parties_gets_his_side(self):
+
+		num_bridesmaids = 0
+		num_groomsmen = 4
+
+		MockDataHelper.create_bridal_parties(num_bridesmaids, num_groomsmen)
+
+		from website.views import _get_bridal_parties
+		her_side, his_side = _get_bridal_parties()
+
+		assert his_side.get("mom").full_name == 'Mrs. Kivido'
+		assert his_side.get("dad").full_name == 'Mr. Kivido'
+		assert len(his_side.get("groomsmen")) == num_groomsmen
+
 	def test_page_loads(self):
 
+		MockDataHelper.create_bridal_parties()
 		c = Client() 
 		url = reverse("home")
 		response = c.get(url)
@@ -27,7 +56,7 @@ class WeddingHomePageViewTests(TestCase):
 		assert response.status_code == 200, "Expect 200 OK" 
 		expected_context_variables = ["wedding", "sections", "left_sections", 
 									  "right_sections", "accommodations", "faqs",
-									  "attractions"]
+									  "attractions", "her_side", "his_side"]
 
 		for var in expected_context_variables:
 			
@@ -77,6 +106,55 @@ class WeddingModelTests(TestCase):
 
 		assert isinstance(venue, WeddingCeremonyVenue), "Expect it to return a WeddingCeremonyVenue"
 		assert venue == venue1, "Expect it to return the correct venue"
+
+	def test_get_bride(self):
+
+		MockDataHelper.create_bridal_parties()
+
+		person = BridalPartyMember.get_bride()
+		assert len(person) == 1, 'Returns only 1 value'
+		assert person[0].full_name == 'Tammy'
+
+	def test_get_her_dad(self):
+
+		MockDataHelper.create_bridal_parties()
+
+		person = BridalPartyMember.get_groom()
+		assert len(person) == 1, 'Returns only 1 value'
+		assert person[0].full_name == 'Mike'
+
+	def test_get_her_mom(self):
+
+		MockDataHelper.create_bridal_parties()
+
+		person = BridalPartyMember.get_her_mom()
+		assert len(person) == 1, 'Returns only 1 value'
+		assert person[0].full_name == 'Mrs. Arendse'
+
+	def test_get_her_dad(self):
+
+		MockDataHelper.create_bridal_parties()
+
+		person = BridalPartyMember.get_her_dad()
+		assert len(person) == 1, 'Returns only 1 value'
+		assert person[0].full_name == 'Mr. Arendse'
+
+	def test_get_his_mom(self):
+
+		MockDataHelper.create_bridal_parties()
+
+		person = BridalPartyMember.get_his_mom()
+		assert len(person) == 1, 'Returns only 1 value'
+		assert person[0].full_name == 'Mrs. Kivido'
+
+	def test_get_his_dad(self):
+
+		MockDataHelper.create_bridal_parties()
+
+		person = BridalPartyMember.get_his_dad()
+		assert len(person) == 1, 'Returns only 1 value'
+		assert person[0].full_name == 'Mr. Kivido'
+
 
 
 class SectionModelTests(TestCase):

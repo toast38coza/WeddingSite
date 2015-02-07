@@ -39,3 +39,13 @@ class GuestRSVP(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
 
+class BridalPartyPerson(models.Model):
+
+    wedding = models.ForeignKey('website.Wedding')
+    user = models.OneToOneField(User)
+    guest = models.ForeignKey('Guest')
+
+    description = models.TextField(blank=True)
+
+    picture = models.ImageField(upload_to='picture', blank=True)
+

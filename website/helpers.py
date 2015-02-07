@@ -37,3 +37,22 @@ class MockDataHelper:
 		return WeddingReceptionVenue.objects.create(wedding = wedding, title=title, \
 			start_datetime = start_datetime, extra_info=extra_info, address="Swakopmund, Namibia", latitude = "0", longitude = "0")
 
+	@staticmethod
+	def create_bridal_parties(num_bridesmaids = 3, num_groomsmen=3):
+
+		BridalPartyMember.objects.create(role='Bride', side='Hers', full_name='Tammy')
+		BridalPartyMember.objects.create(role='Groom', side='His', full_name='Mike')
+
+		BridalPartyMember.objects.create(role='Mom', side='Hers', full_name='Mrs. Arendse')
+		BridalPartyMember.objects.create(role='Dad', side='Hers', full_name='Mr. Arendse')
+
+		BridalPartyMember.objects.create(role='Mom', side='His', full_name='Mrs. Kivido')
+		BridalPartyMember.objects.create(role='Dad', side='His', full_name='Mr. Kivido')
+
+		for x in range(0,num_bridesmaids):
+			full_name='Bridesmaid {0}' . format (x)
+			BridalPartyMember.objects.create(role='Bridesmaid', side='Hers', full_name = full_name)
+
+		for x in range(0,num_groomsmen):
+			full_name='Groomsman {0}' . format (x)
+			BridalPartyMember.objects.create(role='Groomsman', side='His', full_name = full_name)

@@ -1,0 +1,17 @@
+<div>
+    <div class="round-frame-bg">
+        {% if person.picture %}
+        <div class="round-frame">
+            <img src="{{STATIC_URL}}{{person.picture.url}}" 
+                 alt="{{person.full_name}} - {{person.role}}">
+        </div><!-- /.round-frame -->
+        {% endif %}
+    </div><!-- /.round-frame-bg -->
+    <h5>
+        {{person.full_name}} 
+        {% if person.role_datail %}
+        ({{person.role_datail}})
+        {% endif %}
+    </h5>
+    <p class='text-center'>{{person.description|default:"I'll find something to put here"}}</p>
+</div><!-- /.hide -->

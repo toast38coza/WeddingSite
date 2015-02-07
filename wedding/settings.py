@@ -54,7 +54,8 @@ INSTALLED_APPS = (
     'events',
     'registry',
     'faq',
-    'guests'
+    'guests',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,3 +110,4 @@ MEDIA_ROOT = '/srv/www/wedding/media/'
 
 WEDDING_SECTIONS = [("Welcome", True), ("Gallery", False), ("Logistics", True), 
                     ("Events", True), ("Registry", True), ("FAQ", True)]
+                 

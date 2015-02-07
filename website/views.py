@@ -1,9 +1,27 @@
 from django.shortcuts import render
-from website.models import Wedding, Section
+from website.models import Wedding, Section, BridalPartyMember
 from logistics.models import Accommodation, Attraction
 from events.models import Event
 from django.contrib.sites.shortcuts import get_current_site
 from faq.models import FAQ
+
+
+def _get_bridal_parties():
+
+	her_side = {
+		"bride": BridalPartyMember.get_bride()[0],
+		"mom": BridalPartyMember.get_her_mom()[0],
+		"dad": BridalPartyMember.get_her_dad()[0],
+		"bridesmaids": BridalPartyMember.get_bridesmaids(),
+	}
+	his_side = {
+		"groom": BridalPartyMember.get_groom()[0],
+		"mom": BridalPartyMember.get_his_mom()[0],
+		"dad": BridalPartyMember.get_his_dad()[0],
+		"groomsmen": BridalPartyMember.get_groomsmen(),
+	}
+
+	return her_side, his_side
 
 def home(request):
 
@@ -29,6 +47,8 @@ def home(request):
 	else: 
 		wedding_date = None
 
+	her_side, his_side = _get_bridal_parties()
+
 	context = {
 		"wedding" : wedding,
 		"sections": sections,
@@ -41,5 +61,7 @@ def home(request):
 		"ceremony_venue": ceremony_venue,
 		"reception_venue": reception_venue,
 		"wedding_date": wedding_date,
+		"her_side": her_side,
+		"his_side": his_side,
 	}
 	return render(request, "themes/bliss/index.html", context)
