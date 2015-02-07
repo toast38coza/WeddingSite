@@ -1,0 +1,142 @@
+<!-- =========================================================================================================
+==============================================================================================================
+                                        "BRIDE'S PARTY" section
+==============================================================================================================
+============================================================================================================== -->
+<div id="bridal-parties"></div>
+<section id="thebrideside">
+
+    <!-- "THE BRIDE'S SIDE" HEADER -->
+    <div id="thebridesidephoto" class="parallax-hook parallax-thebrideside parallax-background">
+            
+        <div class="section-overlay">
+            <div class="container">
+                <div class="row">
+                    <header class="col-md-6 col-md-offset-3">
+                        The Bride's Side
+                        <span>Friends and family of the bride</span>
+                    </header>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.section-overlay -->
+        
+    </div><!-- /#thebridesidephoto -->
+
+    <!-- "THE BRIDE'S SIDE" ACTUAL CONTENT -->
+    <div class="container">
+
+        <!-- SECONDARY TITLE -->
+        <h3 class="text-center intermediary-waypoint">These are the friends and family of the bride</h3>
+
+        <div class="row">
+            <!-- THE BRIDE'S MOM -->
+            <div class="col-md-4 bridemom">
+                {% include 'themes/bliss/partials/bridal-party/person.html' with person=her_side.mom %}
+            </div><!-- /.col-md-4-->
+
+            <!-- THE BRIDE -->
+            {% if her_side.bride.picture %}
+            <div class="col-md-4 thebride">
+                <div>
+                    <div class="round-frame-bg">
+                        <div class="round-frame">
+                            <img src="{{her_side.bride.picture.url}}" alt="the bride">
+                        </div><!-- /.round-frame -->
+                    </div><!-- /.round-frame-bg -->
+                </div><!-- /.hide -->
+            </div><!-- /.col-md-4-->
+            {% endif %}
+
+            <!-- THE BRIDE'S DAD -->
+            <div class="col-md-4 bridedad">
+                {% include 'themes/bliss/partials/bridal-party/person.html' with person=her_side.dad %}
+            </div><!-- /.col-md-4-->
+
+        </div><!-- /.row-->
+
+        <!-- THE BRIDE'S MAIDS -->
+        <div class="row">
+
+            {% for maid in her_side.bridesmaids %}
+            <!-- BRIDE'S MAID 1 -->
+            <div class="col-md-4 bridesmaid">
+                {% include 'themes/bliss/partials/bridal-party/person.html' with person=maid %}
+            </div><!-- /.col-md-4-->
+            {% endfor %}
+
+        </div><!-- /.row-->
+
+    </div><!-- /.container -->
+</section><!-- /.thebridesidephoto-->
+
+<!-- =========================================================================================================
+==============================================================================================================
+                                        "GROOM'S PARTY" section
+==============================================================================================================
+============================================================================================================== -->
+
+<section id="thegroomside">
+
+     <!-- "THE GROOM'S SIDE" HEADER -->
+    <div id="thegroomsidephoto" class="parallax-hook parallax-thegroomside parallax-background">
+
+        <div class="section-overlay">
+            <div class="container">
+                <div class="row">
+                    <header class="col-md-6 col-md-offset-3">
+                        The Groom's Side
+                        <span>Friends and family of the groom</span>
+                    </header>
+                </div><!-- /.row-->
+            </div><!-- /.container-->
+        </div><!-- /.section-overlay-->
+
+    </div><!-- /#thegroomsidephoto -->
+
+    <!-- "THE GROOM'S SIDE" ACTUAL CONTENT -->
+    <div class="container">
+
+        <!-- SECONDARY TITLE -->
+        <h3 class="text-center intermediary-waypoint">These are the friends and family of the groom</h3>
+
+        <div class="row">
+
+            <!-- THE GROOM'S MOM -->
+            <div class="col-md-4 groommom">
+                {% include 'themes/bliss/partials/bridal-party/person.html' with person=his_side.mom %}
+            </div><!-- /.col-md-4-->
+
+            {% if his_side.groom.picture %}
+            <!-- THE GROOM -->
+            <div class="col-md-4 thegroom">
+                 <div>
+                    <div class="round-frame-bg">
+                        <div class="round-frame">
+                            <img src="{{his_side.groom.picture.url}}" alt="the groom">
+                        </div><!-- /.round-frame -->
+                    </div><!-- /.round-frame-bg -->
+                </div>
+            </div><!-- /.col-md-4-->
+            {% endif %}
+
+            <!-- THE GROOM'S DAD -->
+            <div class="col-md-4 groomdad">
+                
+                {% include 'themes/bliss/partials/bridal-party/person.html' with person=his_side.dad %}
+            </div><!-- /.col-md-4-->
+
+        </div><!-- /.row-->
+
+
+        <!-- THE GROOM'S MEN -->
+        <div class="row">
+
+            {% for groom in his_side.groomsmen %}
+            <div class="col-md-4 groomsmaid">
+            {% include 'themes/bliss/partials/bridal-party/person.html' with person=groom %}
+            </div><!-- /.col-md-4-->
+            {% endfor %}
+            
+        </div><!-- /.row-->
+    </div><!-- /.container -->
+</section><!-- /.thegroomsidephoto-->

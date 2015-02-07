@@ -9,6 +9,17 @@
                 {% if venue.extra_info %}
                 <p>{{venue.extra_info}}</p>
                 {% endif %}
+                
+                <div class="row">
+                    <!-- THE MAP -->
+                    <div class="col-md-12">
+                        <div id="{{venue.title|slugify}}-map" style="height: 300px; margin: 0; padding: 0; border: solid 2px #ccc" ></div>
+                        <div class="clearfix" ></div>
+                        <small>
+                            <a href="http://www.google.com/maps/place/{{venue.latitude}},{{venue.longitude}}"  target="_blank" title="Open in Google Maps" >
+                                Open in Google Maps</a></small>
+                    </div>
+                </div>
 
                 <!-- ADDRESS AND CEREMONY TIME -->
                 <ul class="locationdetails">
@@ -30,16 +41,6 @@
             </div><!-- /.col-md-6-->
         </div>
 
-        <div class="row">
-            <!-- THE MAP -->
-            <div class="col-md-12">
-                <div id="{{venue.title|slugify}}-map" style="height: 300px; margin: 0; padding: 0; border: solid 2px #ccc" ></div>
-                <div class="clearfix" ></div>
-                <small>
-                    <a href="http://www.google.com/maps/place/{{venue.latitude}},{{venue.longitude}}"  target="_blank" title="Open in Google Maps" >
-                        Open in Google Maps</a></small>
-            </div>
-        </div>
     </div>
 
     </script>

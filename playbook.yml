@@ -6,6 +6,7 @@
 
     - name: Create required directories
       file: path='/srv/www/wedding/media/' state=directory    
+      
 
   roles:
     - Ansibles.build-essential
