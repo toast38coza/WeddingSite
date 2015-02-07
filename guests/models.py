@@ -9,15 +9,19 @@ class Guest(models.Model):
         return self.title 
 
     wedding = models.ForeignKey('website.Wedding')
-    user = models.OneToOneField(User)
-    partner = models.ForeignKey('Guest')
+    #user = models.OneToOneField(User)
+    partner = models.ForeignKey('Guest', blank=True, null=True, default=None)
 
     # a unique code the guest can use to login
-    guest_code = models.CharField(max_length=10) 
+    guest_code = models.CharField(max_length=10, blank=True, null=True) 
 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
+
+    vegetarian = models.BooleanField(default=False)
+    coming_to_wedding = models.BooleanField(default=False)
+    notes = models.TextField(blank=True, null=True)
 
     has_been_emailed = models.BooleanField(default=False)
     has_logged_into_site = models.BooleanField(default=False)
