@@ -105,7 +105,7 @@ SITE_ID = 1
 STATIC_URL = '/static/'
 STATIC_ROOT = '/srv/www/wedding/static/'
 
-STATIC_URL = '/wedding/media/'
+MEDIA_URL = '/wedding/media/'
 MEDIA_ROOT = '/srv/www/wedding/media/'
 
 WEDDING_SECTIONS = [("Welcome", True), ("Gallery", False), ("Logistics", True), 
