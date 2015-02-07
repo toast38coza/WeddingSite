@@ -35,6 +35,7 @@
             </div><!-- /.col-md-4-->
 
             <!-- THE BRIDE -->
+            {% if her_side.bride.picture %}
             <div class="col-md-4 thebride">
                 <div>
                     <div class="round-frame-bg">
@@ -44,6 +45,7 @@
                     </div><!-- /.round-frame-bg -->
                 </div><!-- /.hide -->
             </div><!-- /.col-md-4-->
+            {% endif %}
 
             <!-- THE BRIDE'S DAD -->
             <div class="col-md-4 bridedad">
@@ -104,6 +106,7 @@
                 {% include 'themes/bliss/partials/bridal-party/person.html' with person=his_side.mom %}
             </div><!-- /.col-md-4-->
 
+            {% if his_side.groom.picture %}
             <!-- THE GROOM -->
             <div class="col-md-4 thegroom">
                  <div>
@@ -114,6 +117,7 @@
                     </div><!-- /.round-frame-bg -->
                 </div>
             </div><!-- /.col-md-4-->
+            {% endif %}
 
             <!-- THE GROOM'S DAD -->
             <div class="col-md-4 groomdad">

@@ -156,13 +156,31 @@ class WeddingModelTests(TestCase):
 		assert person[0].full_name == 'Mr. Kivido'
 
 
-
 class SectionModelTests(TestCase):
 
 	def setUp(self):
 
 		site = Site.objects.create()
 		self.wedding = Wedding.objects.create(site=site, intro="hello", partner_one="A", partner_two="B")	
+
+	def test_get_enabled_results_are_ordered_by_order(self):
+
+		# remove sections:
+		for s in Section.objects.all(): s.delete()
+
+		s2 = Section.objects.create(headline="s2", tagline="", wedding=self.wedding, enabled=True, order=2)
+		s1 = Section.objects.create(headline="s1", tagline="", wedding=self.wedding, enabled=True, order=1)
+		s3 = Section.objects.create(headline="s3", tagline="", wedding=self.wedding, enabled=True, order=3)
+
+		sections = Section.get_enabled(self.wedding)
+
+		assert len(sections) == 3, 'Expect 3 sections to be returned'
+
+		names_in_order = [section.headline for section in sections]
+
+		self.assertEqual(['s1','s2','s3'], names_in_order)
+
+
 
 	def test_get_enabled_gets_only_enabled_sites(self):
 		"""

@@ -73,6 +73,9 @@ class Section(models.Model):
     def __unicode__(self):
         return self.headline
 
+    class Meta:
+        ordering = ['order']
+
     wedding = models.ForeignKey('Wedding')
     
     meta_title = models.CharField(max_length=100, blank=True )

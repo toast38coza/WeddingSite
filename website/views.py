@@ -2,6 +2,7 @@ from django.shortcuts import render
 from website.models import Wedding, Section, BridalPartyMember
 from logistics.models import Accommodation, Attraction
 from events.models import Event
+from gallery.models import Gallery
 from django.contrib.sites.shortcuts import get_current_site
 from faq.models import FAQ
 
@@ -38,6 +39,7 @@ def home(request):
 	accommodations = Accommodation.objects.filter(wedding=wedding)
 	attractions = Attraction.objects.filter(wedding=wedding)
 	events = Event.objects.filter(wedding=wedding)
+	galleries = Gallery.objects.filter(wedding=wedding)
 
 	ceremony_venue = wedding.get_ceremony_venue()
 	reception_venue = wedding.get_reception_venue()
@@ -63,5 +65,6 @@ def home(request):
 		"wedding_date": wedding_date,
 		"her_side": her_side,
 		"his_side": his_side,
+		"galleries": galleries,
 	}
 	return render(request, "themes/bliss/index.html", context)
