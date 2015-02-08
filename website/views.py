@@ -68,3 +68,18 @@ def home(request):
 		"galleries": galleries,
 	}
 	return render(request, "themes/bliss/index.html", context)
+
+
+def thanks(request):
+	import random
+	thanks_images = [
+		'omfg-awesome.jpg', 'obama.jpg', 'bad-cry.jpg', 
+		'most-interesting-man.jpg', 'whos-awesome.jpg',
+		'parksandrecreation.jpg'
+	]
+
+	context = {
+		"image": random.choice(thanks_images)
+	}
+
+	return render(request, "thanks.html", context)

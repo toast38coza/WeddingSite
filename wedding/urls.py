@@ -15,6 +15,7 @@ router.register(r'weddings', WeddingViewSet)
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'website.views.home', name='home'),
+    url(r'^thanks/$', 'website.views.thanks', name='thanks'),
 
     # api:
     url(r'^api/v1/', include(router.urls)),

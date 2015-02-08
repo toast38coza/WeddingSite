@@ -445,14 +445,14 @@ $('#myTab a').click(function (e) {
                 });
             }
             
-            if(message.length == 0){
+            /*if(message.length == 0){
                 var error = true;
                 $('#rsvp-message').addClass('notcompleted');
                 $('#rsvp-message').attr('placeholder', 'Please leave us a message!');
                 $('#rsvp-message').focus (function(){
                     $(this).removeClass('notcompleted');
                 });
-            }
+            }*/
             
             //now when the validation is done we check if the error variable is false (no errors)
             if(error == false){
