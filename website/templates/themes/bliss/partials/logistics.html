@@ -50,9 +50,11 @@
                 {% for accommodation in accommodations %}
                 <div class="col-md-3 col-sm-3">
                     <div class="round-frame-bg">
+                        {% if accommodation.picture %}
                         <div class="round-frame">
                             <img src="{{accommodation.picture.url}}" alt="{{accommodation.title}}">
                         </div><!-- /.round-frame -->
+                        {% endif %}
                     </div><!-- /.round-frame-bg -->
                     <div class="alignright">
                         <h5>{{accommodation.title}}</h5>
