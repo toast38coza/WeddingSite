@@ -6,6 +6,10 @@ class GuestRSVPInline(admin.StackedInline):
 
 
 class GuestAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'partner', 'coming_to_wedding')
+    list_editable = ('first_name', 'last_name', 'email', 'partner', 'coming_to_wedding')
+    list_filter = ('coming_to_wedding',)
+    search_fields = ['first_name', 'last_name', 'email',]
     inlines = [GuestRSVPInline]
 
 admin.site.register(Guest, GuestAdmin)

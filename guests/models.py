@@ -6,7 +6,7 @@ from taggit.managers import TaggableManager
 class Guest(models.Model):
 
     def __unicode__(self):
-        return self.title 
+        return "{0} {1}" . format (self.first_name, self.last_name) 
 
     wedding = models.ForeignKey('website.Wedding')
     #user = models.OneToOneField(User)
