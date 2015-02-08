@@ -41,8 +41,7 @@
                        <!-- TITLE AND SUBTITILE INSIDE THE HOVER EFFECT -->
                         <div class="mega-hovertitle">
                             {{photo.caption}}
-                            {#<div class="mega-hoversubtitle">(Before The Wedding)</div>#}
-                            }
+                            {#<div class="mega-hoversubtitle">(Before The Wedding)</div>#}                            
                         </div>
                      
                         <!-- THE LINK BUTTON -->
@@ -50,7 +49,7 @@
                      
                         <!-- THE VIEW MORE BUTTON -->
                         <a class="fancybox" href="{{photo.image.url}}">
-                            <div class="mega-hoverview"></div>
+                            <div class="mega-hoverview">{{photo.image.url}}</div>
                         </a>
                      
                     </div> <!-- // END OF THE HOVER EFFECT MARKUP -->
