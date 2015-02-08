@@ -20,6 +20,7 @@
 
         <!-- MEGAFOLIO FILTER LIST -->
         <ul class="filter-list">
+            <li class="filter" data-category="cat-all">All</li>
             {% for gallery in galleries %}
             <li class="filter" data-category="cat-{{gallery.slug}}">{{gallery.title}}</li>
             {% endfor %}            
@@ -33,7 +34,9 @@
                 
                 <!-- GALLERY PHOTO -->
                 {% for photo in gallery.picture_set.all %}
-                <div class="mega-entry cat-all cat-{{gallery.slug}}" id="g1-entry-1" data-src="{{STATIC_URL}}img/gallery/1.jpg" data-width="600" data-height="450">
+                <div class="mega-entry cat-all cat-{{gallery.slug}}" 
+                    id="g1-entry-1" 
+                    data-src="{{photo.image.url}}" data-width="600" data-height="450">
                     
                     <!-- THE CONTAINER FOR THE HOVER EFFECT -->
                     <div class="mega-hover">
@@ -41,7 +44,7 @@
                        <!-- TITLE AND SUBTITILE INSIDE THE HOVER EFFECT -->
                         <div class="mega-hovertitle">
                             {{photo.caption}}
-                            {#<div class="mega-hoversubtitle">(Before The Wedding)</div>#}                            
+                            <div class="mega-hoversubtitle"></div>
                         </div>
                      
                         <!-- THE LINK BUTTON -->
@@ -49,7 +52,7 @@
                      
                         <!-- THE VIEW MORE BUTTON -->
                         <a class="fancybox" href="{{photo.image.url}}">
-                            <div class="mega-hoverview">{{photo.image.url}}</div>
+                            <div class="mega-hoverview"></div>
                         </a>
                      
                     </div> <!-- // END OF THE HOVER EFFECT MARKUP -->
