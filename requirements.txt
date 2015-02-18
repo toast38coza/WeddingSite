@@ -9,6 +9,7 @@ mailchimp
 pillow
 django-autoslug
 django-taggit
+djrill
 
 django-jenkins
 django-extensions

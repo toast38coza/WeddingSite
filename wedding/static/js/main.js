@@ -64,7 +64,7 @@ $(document).ready(function() {
         var eventValue = $(this).find("h5").text();
         var theID = $(this).find("h5").attr('class');
         
-        var eventParticipating = "<div class='eventTag'><label class='checkbox-inline' for='"+theID+"'><input type='checkbox' checked='checked' id='"+theID+"' name='event[]' value='"+eventValue+"'>"+eventValue+"</label><span class='remove'>x</span></div>";  
+        var eventParticipating = "<div class='eventTag'><label class='checkbox-inline' for='"+theID+"'><input type='checkbox' checked='checked' id='"+theID+"' name='event[]' value='"+theID+"'>"+eventValue+"</label><span class='remove'>x</span></div>";  
 
         var currentCheckbox = $('input#'+theID);
         var n = currentCheckbox.length;
@@ -463,7 +463,7 @@ $('#myTab a').click(function (e) {
                 /* using the jquery's post(ajax) function and a lifesaver
                 function serialize() which gets all the data from the form
                 we submit it to send_email.php */
-                $.post("send_rsvp.php", $("#rsvpform").serialize(),function(result){
+                $.post($("#rsvpform").attr('action'), $("#rsvpform").serialize(),function(result){
                     //and after the ajax request ends we check the text returned
                     if(result == 'sent'){
                         //if the mail is sent remove the submit paragraph

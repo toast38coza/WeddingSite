@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     # thirdparty:
     'rest_framework',
     'taggit',
+    'djrill',
 
     # project
     'wedding',
@@ -111,3 +112,5 @@ MEDIA_ROOT = '/srv/www/wedding/media/'
 WEDDING_SECTIONS = [("Welcome", True), ("Gallery", False), ("Logistics", True), 
                     ("Events", True), ("Registry", True), ("FAQ", True)]
                  
+MANDRILL_API_KEY = 'yrrG35DBNHKIs24xFMai0Q'
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"

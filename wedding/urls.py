@@ -3,6 +3,7 @@ from django.contrib import admin
 from rest_framework import routers
 
 from website.api import UserViewSet, WeddingViewSet
+from guests.api import guest_router
 
 # api:
 # Routers provide an easy way of automatically determining the URL conf.
@@ -16,6 +17,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'website.views.home', name='home'),
     url(r'^thanks/$', 'website.views.thanks', name='thanks'),
+
+    url(r'^api/v1/guests/', include(guest_router.urls)),
 
     # api:
     url(r'^api/v1/', include(router.urls)),

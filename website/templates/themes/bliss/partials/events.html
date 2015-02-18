@@ -48,7 +48,7 @@
                         <div class="date">
                             {{event.start_datetime|date:"d"}}<span>th</span>
                         </div><!-- /.date-->
-                        <h5 class="{{event.pk}}">{{event.title}}</h5>
+                        <h5 class="{{event.pk}}" >{{event.title}}</h5>
                     </div><!-- /.col-md-4 -->
                     {% endfor %}
 
@@ -69,8 +69,8 @@
         <div class="col-md-8">
 
             <!-- the actual form begins -->
-            <form role="form" action="send_rsvp.php" method="post" id="rsvpform">
-
+            <form role="form" action="/api/v1/guests/guests/rsvp/" method="post" id="rsvpform">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-12">
                         <h5>
@@ -78,21 +78,17 @@
                         </h5>                        
                         <div >
                             <label>
-                                <input type="checkbox" name="wedding-rsvp" id="wedding-rsvp" />
+                                <input type="radio" value="yes" name="wedding-rsvp" id="wedding-rsvp" />
                                 Yes
                             </label>
                             <label>
-                                <input type="checkbox" name="wedding-rsvp" id="wedding-rsvp" />
+                                <input type="radio" value="no" name="wedding-rsvp" id="wedding-rsvp" />
                                 No
                             </label>
-                        </div>
-                        <div>
-                            <label for="rsvp-name" class="sr-only">Please enter your guest ID</label>
-                            <input type="text" name="rsvp-guest-id" placeholder="Guest ID" id="rsvp-guest-id" class="form-control">
-                            <span class="help-text">You guest ID will be in the invite.</span>
-                        </div>
+                        </div>                        
                     </div>
-                </div><!--/.row-->
+                </div>
+                <!--/.row-->
 
                 <!-- EVENTS ATTENDING -->
                 <div class="row">
