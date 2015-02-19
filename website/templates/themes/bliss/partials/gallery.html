@@ -1,3 +1,4 @@
+{% load thumbnail %}
 <section id="gallery">
 
     <!-- "GALLERY 1" SECTION TITLE -->
@@ -34,9 +35,11 @@
                 
                 <!-- GALLERY PHOTO -->
                 {% for photo in gallery.picture_set.all %}
+
+                {% thumbnail photo.image "600x450" as resized_image %}
                 <div class="mega-entry cat-all cat-{{gallery.slug}}" 
                     id="g1-entry-1" 
-                    data-src="{{photo.image.url}}" data-width="600" data-height="450">
+                    data-src="{{resized_image.url}}" data-width="600" data-height="450">
                     
                     <!-- THE CONTAINER FOR THE HOVER EFFECT -->
                     <div class="mega-hover">
@@ -58,6 +61,7 @@
                     </div> <!-- // END OF THE HOVER EFFECT MARKUP -->
 
                 </div><!-- .mega-entry-->
+                {% endthumbnail %}
                 {% endfor %}
                 
             </div><!-- /.megafolio-container--> 
