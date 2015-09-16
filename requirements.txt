@@ -10,6 +10,7 @@ pillow
 django-autoslug
 django-taggit
 djrill
+sorl-thumbnail
 
 django-jenkins
 django-extensions
