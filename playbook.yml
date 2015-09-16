@@ -17,11 +17,11 @@
 
   vars:
     postgresql_databases:
-      - name: tam
+      - name: wedding
 
     postgresql_users:
-      - name: tam
-        pass: tam
+      - name: wedding
+        pass: wedding
         encrypted: no       # denotes if the password is already encrypted.
 
     postgresql_user_privileges:

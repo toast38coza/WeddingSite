@@ -624,6 +624,17 @@ $('#myTab a').click(function (e) {
 });
 
 
+$(".own-amount-btn").on("click", function (e) {
+    e.preventDefault();
+    var amount = $("#registry-custom-amount").val();
+    var url = "https://www.payfast.co.za/eng/process?cmd=_paynow&receiver=tammy.michael2015%40gmail.com&item_name="+amount+"&amount="+amount+".00&return_url=http%3A%2F%2Ftammyandmichael.us%2Fthanks&cancel_url=http%3A%2F%2Ftammyandmichael.us%2Fcancelled";
+    window.location = url;
+    //window.location.reload(url);
+
+});
+
+
+
 
 
 
